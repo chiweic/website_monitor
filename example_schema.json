@@ -1,0 +1,107 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "type": "object",
+  "properties": {
+    "活動鏈接": {
+      "type": "string"
+    },
+    "分類": {
+      "type": "object",
+      "properties": {
+        "主要": {
+          "type": "string"
+        },
+        "次要": {
+          "type": "string"
+        },
+        "類型": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "主要",
+        "次要",
+        "類型"
+      ]
+    },
+    "活動名稱": {
+      "type": "string"
+    },
+    "活動單位": {
+      "type": "string"
+    },
+    "活動網址": {
+      "type": "string"
+    },
+    "活動日期及時間": {
+      "type": "string"
+    },
+    "活動地點": {
+      "type": "string"
+    },
+    "活動描述": {
+      "type": "string"
+    },
+    "活動場次": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "場次": {
+            "type": "string"
+          },
+          "主題": {
+            "type": "string"
+          },
+          "活動列表": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "日期": {
+                  "type": "string"
+                },
+                "時間": {
+                  "type": "string"
+                },
+                "地點": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "地點",
+                "日期",
+                "時間"
+              ]
+            }
+          }
+        },
+        "required": [
+          "主題",
+          "場次",
+          "活動列表"
+        ]
+      }
+    },
+    "活動報名": {
+      "type": "object",
+      "properties": {
+        "報名對象": {
+          "type": "string"
+        },
+        "報名時間": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "required": [
+    "分類",
+    "活動名稱",
+    "活動單位",
+    "活動地點",
+    "活動場次",
+    "活動日期及時間",
+    "活動鏈接"
+  ]
+}
